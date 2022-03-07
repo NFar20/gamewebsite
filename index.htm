@@ -43,7 +43,7 @@ function slots() {
     var cash = 100;
     var wager;
     
-    while(cash>0) {
+    while(cash>=0) {
         wager = window.prompt("Welcome to the slot machine! You have $" + cash + ". If you get 2 of the same number, you'll double your wage. If all 3 are the same, you'll triple it. Enter your wager.");
         while(wager>cash || wager<=0) {
             wager = window.prompt("Invalid wager. Please try again.");
@@ -52,16 +52,16 @@ function slots() {
      alert(left + "\t" + mid + "\t" + right);
      if(left==mid && mid==right) {
             cash = cash + 3 * wager;
+            alert("Congrats! You won the jackpot! Your new balance is $" + cash);
         }
         else if(left==mid || right==mid || left==right) {
             cash = cash + 2 * wager;
+            alert("Congrats! You doubled your wager! Your new balance is $" + cash);
         }
         else {
-         cash = cash;
+         alert("You lost. Your new balance is $" + cash);
         }
-        wager = 0;
     }
-
 
 }
 </script>
