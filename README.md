@@ -1,3 +1,3 @@
 # NFar20.github.io
 AP Comp Sci Extra Credit Project
-\nThe end goal of this project is to create a site with unblocked games for anyone on school WiFi to access for free
+The end goal of this project is to create a site with unblocked games for anyone on school WiFi to access for free
