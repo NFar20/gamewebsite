@@ -24,15 +24,19 @@ function guesser() {
 function square() {
     var range = window.prompt("Enter max square root value: ");
     var y = range;
-    var x = Math.floor((Math.random()*y));
-    var ans = Math.pow(x,2);
-    var guess = window.prompt(ans+ " What is the square root of this number?");
-    if(guess==x) {
-        alert("Congrats! You typed " + guess + " and that was the correct answer!");
-    }
-
-    else {
-        alert("You typed " + guess + ". The correct answer was " + x);
+    while(true) {
+        var x = Math.floor((Math.random()*y));
+        var ans = Math.pow(x,2);
+        var guess = window.prompt(ans+ " What is the square root of this number? Type STOP when you want to end (all caps)");
+        if(guess==x) {
+            alert("Congrats! You typed " + guess + " and that was the correct answer!");
+        }
+        else if(guess.localeCompare("STOP") = 0) {
+            break;
+        }
+        else {
+            alert("You typed " + guess + ". The correct answer was " + x);
+        }
     }
 }
 
