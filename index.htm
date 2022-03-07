@@ -49,7 +49,7 @@ function slots() {
             wager = window.prompt("Invalid wager. Please try again.");
         }
      cash = cash - wager;
-     alert(left + "\t" + mid + "\t" + right);
+     alert(left + "     |     " + mid + "     |     " + right);
      if(left==mid && mid==right) {
             cash = cash + 3 * wager;
             alert("Congrats! You won the jackpot! Your new balance is $" + cash);
