@@ -6,6 +6,7 @@
 <h2 style="color:lightgray"><center>By Nicholas Farhadian</center></h2>
 <button style="background-color: lightgray; color:darkcyan; " onclick="guesser()">Random Number Guesser</button>
 <button style="background-color: lightgray; color:darkcyan; " onclick="square()">Square Root Guesser</button>
+<button style="background-color: lightgray; color:darkcyan; " onclick="slots()">Risk Free Slots</button>
 
 <script>
 function guesser() {
@@ -33,5 +34,34 @@ function square() {
     else {
         alert("You typed " + guess + ". The correct answer was " + x);
     }
+}
+
+function slots() {
+    var left = Math.floor(Math.random()*11);
+    var mid = Math.floor(Math.random()*11);
+    var right = Math.floor(Math.random()*11);
+    var cash = 100;
+    var wager;
+    
+    while(cash>0) {
+        wager = window.prompt("Welcome to the slot machine! You have $" + cash + ". If you get 2 of the same number, you'll double your wage. If all 3 are the same, you'll triple it. Enter your wager.");
+        while(wager>cash || wager<=0) {
+            wager = window.prompt("Invalid wager. Please try again.");
+        }
+     cash = cash - wager;
+     alert(left + "\t" + mid + "\t" + right);
+     if(left==mid && mid==right) {
+            cash = cash + 3 * wager;
+        }
+        else if(left==mid || right==mid || left==right) {
+            cash = cash + 2 * wager;
+        }
+        else {
+         cash = cash;
+        }
+        wager = 0;
+    }
+
+
 }
 </script>
