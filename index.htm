@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<body style="background-color:darkcyan" >
+
+<h1 style="color:lightgray"><center>Free Unblocked Games</center></h1>
+<h2 style="color:lightgray"><center>By Nicholas Farhadian</center></h2>
+<button style="background-color: lightgray; color:darkcyan; " onclick="guesser()">Random Number Guesser</button>
+<button style="background-color: lightgray; color:darkcyan; " onclick="square()">Square Root Guesser</button>
+
+<script>
+function guesser() {
+    var x = Math.random()*10;
+    var ans = x-x%1;
+    var guess = window.prompt("Guess a random number between 1 and 10: ");
+    if(guess == ans) {
+        alert("Congrats! You guessed " + guess + " and that was the correct answer!");
+    }
+    else {
+        alert("You guessed " + guess + ". The correct answer was " + ans);
+    }
+}
+
+function square() {
+    var range = window.prompt("Enter max square root value: ");
+    var y = range;
+    var x = (Math.random()*y);
+    var ans = Math.pow((x-x%1), 2);
+    var sq = Math.sqrt(ans);
+    var guess = window.prompt(ans+ " What is the square root of this number?");
+    if(guess==sq) {
+        alert("Congrats! You typed " + guess + " and that was the correct answer!");
+    }
+
+    else {
+        alert("You typed " + guess + ". The correct answer was " + ans);
+    }
+}
+</script>
