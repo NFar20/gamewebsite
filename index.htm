@@ -37,14 +37,17 @@ function square() {
 }
 
 function slots() {
-    var left = Math.floor(Math.random()*11);
-    var mid = Math.floor(Math.random()*11);
-    var right = Math.floor(Math.random()*11);
+    var left;
+    var mid;
+    var right;
     var cash = 100;
     var wager;
     
     while(cash>=0) {
         wager = window.prompt("Welcome to the slot machine! You have $" + cash + ". If you get 2 of the same number, you'll double your wage. If all 3 are the same, you'll triple it. Enter your wager.");
+        left = Math.floor(Math.random()*11);
+        mid = Math.floor(Math.random()*11);
+        right = Math.floor(Math.random()*11);
         while(wager>cash || wager<=0) {
             wager = window.prompt("Invalid wager. Please try again.");
         }
